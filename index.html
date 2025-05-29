@@ -1,15 +1,60 @@
 <html>
 <head>
-<center>
-   <style>
-  body {
-    margin: 0;
-    padding: 20px;
-    border: 15px solid rgb(0, 255, 255); /* Cambia los valores RGB si quieres otro color */
-    box-sizing: border-box;
-  }
-</style>
+    <style>
+    body {
+      margin: 0;
+      background-color: #000c58;
+      font-family: Calibri;
+      color: #0705fa;
+    }
 
+    .rgb-border {
+      padding: 20px;
+      min-height: 100vh;
+      background: #000c58;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rgb-border::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(90deg, red, green, blue, red);
+      background-size: 300% 300%;
+      animation: mover 3s linear infinite;
+      z-index: -1;
+      padding: 8px;
+      box-sizing: border-box;
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+    }
+
+    @keyframes mover {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rgb-border">
+     ----------------------------
+<center>
+  
 </head>
 <body bgcolor=#000c58  vlink="blue">
 
