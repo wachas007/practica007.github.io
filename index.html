@@ -1,6 +1,63 @@
 <html>
 <head>
-   
+   <link rel="icon" href="pictures/cobi.jpg" type="image/jpeg">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000c58;
+      font-family: Calibri;
+      color: #0705fa;
+      overflow-x: hidden; /* evita scroll horizontal por el borde */
+    }
+
+    /* Contenedor del borde animado en fondo */
+    .borde-animado {
+      pointer-events: none; /* para que no interfiera con clicks ni scroll */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      padding: 8px; /* grosor del borde */
+      box-sizing: border-box;
+
+      background: linear-gradient(90deg, red, green, blue, red);
+      background-size: 300% 300%;
+      animation: mover 3s linear infinite;
+
+      z-index: 0;
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+    }
+
+    /* Contenedor del contenido, arriba del borde */
+    .contenido {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    @keyframes mover {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="borde-animado"></div>
+
+  <div class="contenido">
 <center>
   
 </head>
