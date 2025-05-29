@@ -1,49 +1,39 @@
 <html>
 <head>
-   <link rel="icon" href="pictures/cobi.jpg" type="image/jpeg">
+    <link rel="icon" href="pictures/cobi.jpg" type="image/jpeg" />
   <style>
     body {
       margin: 0;
       background-color: #000c58;
-      font-family: Calibri;
+      font-family: Calibri, sans-serif;
       color: #0705fa;
-      overflow-x: hidden; /* evita scroll horizontal por el borde */
-    }
-
-    /* Contenedor del borde animado en fondo */
-    .borde-animado {
-      pointer-events: none; /* para que no interfiera con clicks ni scroll */
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      padding: 8px; /* grosor del borde */
-      box-sizing: border-box;
-
-      background: linear-gradient(90deg, red, green, blue, red);
-      background-size: 300% 300%;
-      animation: mover 3s linear infinite;
-
-      z-index: 0;
-      mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask-composite: xor;
-    }
-
-    /* Contenedor del contenido, arriba del borde */
-    .contenido {
+      overflow-x: hidden;
       position: relative;
-      z-index: 1;
-      padding: 20px;
       min-height: 100vh;
     }
 
-    @keyframes mover {
+    /* Borde RGB animado usando un contenedor fijo con gradiente y máscara */
+    .rgb-border {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 9999;
+      background: linear-gradient(90deg, red, green, blue, red);
+      background-size: 300% 300%;
+      animation: rgbMove 3s linear infinite;
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      box-sizing: border-box;
+      padding: 6px; /* grosor del borde */
+    }
+
+    @keyframes rgbMove {
       0% {
         background-position: 0% 50%;
       }
@@ -51,11 +41,19 @@
         background-position: 100% 50%;
       }
     }
+
+    /* Contenido sobre el borde */
+    .contenido {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      min-height: 100vh;
+    }
   </style>
 </head>
 
 <body>
-  <div class="borde-animado"></div>
+  <div class="rgb-border"></div>
 
   <div class="contenido">
 <center>
