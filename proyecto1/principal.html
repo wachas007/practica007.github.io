@@ -1,72 +1,255 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>COBAEH CEMSaD DURANGO</title>
-    <!-- Ícono en la pestaña -->
-   <link rel="icon" href="pictures/cobi.jpg" alt="banderita" width="80" heigth="80">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Creativo con Carrusel, Título, Flechas e Hipervínculos</title>
+	<link rel="icon" href="pictures/rana.png" type="image/png">
     <style>
-
+        /* Estilos generales del cuerpo de la página */
         body {
-            background-color: #3af9ad;
-            font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
-            padding: 20px;
-        }
-
-        .titulo {
-            font-family: 'Calibri', serif;
-            font-size: 100px;
-            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #33ff42, #ffaa00  );
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            gap: 105px;
-            flex-wrap: wrap;
+            min-height: 100vh;
         }
 
-        .primera parte {
-            font-family: 'ALGERIAN', serif;
-            font-size: 80px;
-            margin-bottom: 30px;
+        /* Menú de navegación */
+        nav {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
         }
 
-        p {
-            font-size: 200px;
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 16px 24px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #6e8efb;
+            color: white;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 8px;
+            width: 0%;
+            height: 2px;
+            background: #a777e3;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Título del carrusel */
+        h1 {
+            color: white;
+            margin-top: 30px;
+            /* Puedes cambiar el texto del título en el <h2> del body */
+        }
+
+        /* Contenedor del carrusel */
+        .carrusel {
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-top: 10px;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Contenedor de las imágenes (slides) */
+        .slides {
+            display: flex;
+            width: 100%; /* Cambiar si agregas más imágenes: ej. 400% para 4 imágenes */
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        /* Cada imagen ocupa 100% del carrusel */
+        .slides a {
+            flex: 1 0 100%; 
+            height: 100%;
+	    
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen para que cubra el espacio */
+        }
+
+        /* Indicadores (puntos debajo del carrusel) */
+        .indicadores {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .indicadores span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicadores span.activo {
+            background-color: #6e8efb;
+        }
+
+        /* Flechas izquierda y derecha para avanzar */
+        .flecha {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .flecha.izquierda {
+            left: 10px;
+        }
+
+        .flecha.derecha {
+            right: 10px;
         }
     </style>
 </head>
-<body bgcolor=9cef77 vlink="blue">
+<body>
 
-    <div class="titulo">
-       
-       mecanica automotriz       
-         
 
+<!-- Título del carrusel (personaliza el texto) -->
+<h1>MECANICA AUTOMOTRIZ</h1>
+
+<!-- Contenedor del carrusel -->
+<div class="carrusel">
+    <div class="slides" id="slides">
+        <!-- Sustituye href por la URL destino y src por la imagen deseada -->
+        <a href="" target="_blank">
+            <img  src="pictures/buho.jpg" href="Buho.html"  alt="Imagen 1">
+        </a>
+        <a href="" target="_blank">
+            <img src="pictures/gato .jpg" alt="Imagen 2">
+        </a>
+        
+        </a>
+	<a href="" target="_blank">
+            <img src="pictures/musarana.jpg" alt="Imagen 4">
+        </a>
+	<a href="" target="_blank">
+            <img src="pictures/puerco.jpg" alt="Imagen 5">
+        </a>
+	<a href="" target="_blank">
+            <img src="pictures/tigrillo.jpg" alt="Imagen 6">
+        </a>
+
+        <!-- Agrega más <a> con imágenes si lo deseas, y cambia el ancho del .slides -->
     </div>
-   <font face="Calibri"  color=0705fa size=5>
-<img src="pictures/collage.jpg" width="400" heigth="400">
+    <div class="flecha izquierda" onclick="anteriorSlide()">&#10094;</div>
+    <div class="flecha derecha" onclick="siguienteSlide()">&#10095;</div>
+</div>
 
-<li><a href=" Motor de combustión interna.html">   Motor de combustión interna <br>
-<li><a href="Sistema de transmisión.html"> Sistema de transmisión <br>
-<li><a href="Sistema de suspensión.html"> Sistema de suspensión<br>
-<li><a href="Sistema de frenos.html"> Sistema de frenos <br>
-<li><a href="Diagnóstico automotriz.html">Diagnóstico automotriz<br>
-<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-<a href="/practica007.github.io/index.html">Volver a la página principal</a>
+<!-- Indicadores (puntos) para navegar entre imágenes -->
+<div class="indicadores">
+    <span onclick="mostrarSlide(0)" class="activo"></span> <!-- Primer imagen -->
+    <span onclick="mostrarSlide(1)"></span>                <!-- Segunda imagen -->
 
+    <span onclick="mostrarSlide(3)"></span>                <!-- Cuarta imagen -->
+    <span onclick="mostrarSlide(4)"></span>                <!-- quinta imagen -->
+    <span onclick="mostrarSlide(5)"></span>                <!-- sexta imagen -->
+
+
+    <!-- Agrega más <span> si agregas más imágenes -->
+</div>
+
+<!-- Menú de navegación con enlaces (personaliza los textos y URLs) -->
+<nav>
+    <ul>
+        <li><a href="Diagnóstico automotriz.html">DIAGNOSTICO</a></li> <!-- Sustituye # por la URL de Inicio -->
+        <li><a href="Motor de combustión interna.html">MOTOR</a></li> <!-- Sustituye # por la URL de Servicios -->
+        <li><a href="Sistema de suspensión.html">SUSPENSION</a></li> <!-- Sustituye # por la URL de Proyectos -->
+        <li><a href="Sistema de frenos.html">FRENOS</a></li> <!-- Sustituye # por la URL de Contacto -->
+	<li><a href="Sistema de transmisión.html">TRANSMISION</a></li> <!-- Sustituye # por la URL de Contacto -->
+    </ul>
+</nav>
+
+
+<script>
+    // Variables para controlar el carrusel
+    let slides = document.getElementById('slides');
+    let puntos = document.querySelectorAll('.indicadores span');
+    let totalSlides = puntos.length; // Número total de imágenes
+    let slideActual = 0; // Imagen inicial (0 es la primera)
+
+    // Muestra una imagen específica según el índice
+    function mostrarSlide(indice) {
+        slideActual = indice;
+        slides.style.transform = 'translateX(-' + (100 * indice) + '%)';
+        actualizarIndicadores();
+    }
+
+    // Actualiza los puntos activos (indicadores)
+    function actualizarIndicadores() {
+        puntos.forEach((punto, i) => {
+            if(i === slideActual) {
+                punto.classList.add('activo');
+            } else {
+                punto.classList.remove('activo');
+            }
+        });
+    }
+
+    // Avanza a la siguiente imagen
+    function siguienteSlide() {
+        slideActual = (slideActual + 1) % totalSlides;
+        mostrarSlide(slideActual);
+    }
+
+    // Regresa a la imagen anterior
+    function anteriorSlide() {
+        slideActual = (slideActual - 1 + totalSlides) % totalSlides;
+        mostrarSlide(slideActual);
+    }
+
+    // Carrusel automático cada 4 segundos
+    setInterval(() => {
+        siguienteSlide();
+    }, 4000);
+</script>
 
 </body>
 </html>
-
-
